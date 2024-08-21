@@ -4,3 +4,4 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsIn
 // const supabase = createClient(URL, API_KEY);
 
 export const supabase = createClient(URL, API_KEY);
+
