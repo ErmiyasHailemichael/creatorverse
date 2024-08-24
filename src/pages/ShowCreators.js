@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import supabase from '../client'; // Adjust the import based on your setup
+import { supabase } from '../client';
+
 
 const ShowCreators = () => {
   const [creators, setCreators] = useState([]);
