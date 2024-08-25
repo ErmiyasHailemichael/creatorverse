@@ -1,0 +1,30 @@
+
+.edit-creator {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #021526;
+    border-radius: 8px;
+  }
+  
+  .edit-creator h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .edit-creator form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-creator label {
+    margin-bottom: 15px;
+  }
+  
+  .edit-creator button:hover {
+    background-color: #0056b3;
+  }
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
