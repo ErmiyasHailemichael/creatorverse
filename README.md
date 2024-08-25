@@ -33,16 +33,19 @@ The following **additional** features are implemented:
 * [x] Add a back button on the Add creator and edit creator page
 
 ## Video Walkthrough
-![Uploading Kapture 2024-08-25 at 16.37.47.gif…]()
+
+
+
+
+https://github.com/user-attachments/assets/d7f30aa1-d05e-40d9-b992-24d2f7b28a08
 
 
 Here's a walkthrough of implemented required features:
 
 👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
+GIF created with ...  👉🏿 GIF tool here 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
