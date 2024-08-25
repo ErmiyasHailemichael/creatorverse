@@ -59,6 +59,7 @@ const EditCreator = () => {
 
   return (
     <div className="edit-creator">
+    <button type="button" className="back-button" onClick={() => navigate(-1)}>Back</button>
       <h1>Edit Creator</h1>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
