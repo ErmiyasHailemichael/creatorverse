@@ -34,16 +34,12 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-
-
-
 https://github.com/user-attachments/assets/d7f30aa1-d05e-40d9-b992-24d2f7b28a08
 
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  👉🏿 GIF tool here 
 <!-- Recommended tools:
