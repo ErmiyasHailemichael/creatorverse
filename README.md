@@ -48,6 +48,8 @@ GIF created with ...  👉🏿 GIF tool here
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
+* [x] Making the logical component structure
+* [x] styling the creator-card
 
 ## License
 
