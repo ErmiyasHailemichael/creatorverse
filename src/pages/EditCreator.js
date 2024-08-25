@@ -1,96 +1,92 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {supabase} from '../client';
+import { supabase } from '../client';
 
 const EditCreator = () => {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const [name, setName] = useState('');
-    const [url, setUrl] = useState('');
-    const [description, setDescription] = useState('');
-    const [imageURL, setImageURL] = useState('');
-    const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [creator, setCreator] = useState({
+    name: '',
+    url: '',
+    description: '',
+    imageURL: ''
+  });
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchCreator = async () => {
-            const { data, error } = await supabase
-                .from('creators')
-                .select('*')
-                .eq('id', id)
-                .single();
+  useEffect(() => {
+    const fetchCreator = async () => {
+      const { data, error } = await supabase
+        .from('creators')
+        .select('*')
+        .eq('id', id)
+        .single();
 
-            if (error) {
-                console.error('Error fetching creator:', error);
-            } else {
-                setName(data.name);
-                setUrl(data.url);
-                setDescription(data.description);
-                setImageURL(data.imageURL);
-            }
-            setLoading(false);
-        };
-
-        fetchCreator();
-    }, [id]);
-
-    const handleUpdate = async () => {
-        const { error } = await supabase
-            .from('creators')
-            .update({ name, url, description, imageURL })
-            .eq('id', id);
-
-        if (error) {
-            console.error('Error updating creator:', error);
-        } else {
-            navigate('/');
-        }
+      if (error) {
+        setError('Error fetching creator data');
+        console.error('Error fetching creator:', error);
+      } else {
+        setCreator(data);
+      }
     };
 
-    const handleDelete = async () => {
-        const { error } = await supabase
-            .from('creators')
-            .delete()
-            .eq('id', id);
+    fetchCreator();
+  }, [id]);
 
-        if (error) {
-            console.error('Error deleting creator:', error);
-        } else {
-            navigate('/');
-        }
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCreator((prev) => ({ ...prev, [name]: value }));
+  };
 
-    if (loading) {
-        return <p>Loading...</p>;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { error } = await supabase
+      .from('creators')
+      .update({
+        name: creator.name,
+        url: creator.url,
+        description: creator.description,
+        imageURL: creator.imageURL
+      })
+      .eq('id', id);
+
+    if (error) {
+      setError('Error updating creator');
+      console.error('Error updating creator:', error);
+    } else {
+      navigate('/');
     }
+  };
 
-    return (
-        <div className="edit-creator">
-            <h2>Edit {name}</h2>
-            <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }}>
-                <input 
-                    type="text" 
-                    value={name} 
-                    onChange={(e) => setName(e.target.value)} 
-                />
-                <input 
-                    type="text" 
-                    value={url} 
-                    onChange={(e) => setUrl(e.target.value)} 
-                />
-                <textarea 
-                    value={description} 
-                    onChange={(e) => setDescription(e.target.value)} 
-                />
-                <input 
-                    type="text" 
-                    value={imageURL} 
-                    onChange={(e) => setImageURL(e.target.value)} 
-                />
-                <button type="submit">Update Creator</button>
-            </form>
-            <button onClick={handleDelete}>Delete Creator</button>
-        </div>
-    );
+  return (
+    <div className="edit-creator">
+      <h1>Edit Creator</h1>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" name="name" value={creator.name} onChange={handleChange} />
+        </label>
+        <label>
+          URL:
+          <input type="text" name="url" value={creator.url} onChange={handleChange} />
+        </label>
+        <label>
+          Description:
+          <textarea name="description" value={creator.description} onChange={handleChange} />
+        </label>
+        <label>
+          Image URL:
+          <input type="text" name="imageURL" value={creator.imageURL} onChange={handleChange} />
+        </label>
+        <button type="submit">Update Creator</button>
+      </form>
+    </div>
+  );
 };
 
 export default EditCreator;
+
+
+
+
+
