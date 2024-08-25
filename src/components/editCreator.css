@@ -1,0 +1,54 @@
+
+.edit-creator {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-creator h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .edit-creator form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-creator label {
+    margin-bottom: 15px;
+  }
+  
+  .edit-creator input,
+  .edit-creator textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .edit-creator textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .edit-creator button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .edit-creator button:hover {
+    background-color: #0056b3;
+  }
+  .error {
+    color: red;
+    margin-top: 10px;
+  }

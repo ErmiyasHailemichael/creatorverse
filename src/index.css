@@ -25,18 +25,32 @@ body {
 }
 
 h1, h2 {
-  color: #333;
+  color: #021526;
 }
-
 .creator-card {
-  background: rgba(0, 0, 0, 0.5); /* Glassy effect */
-  color: #fff;
+  width: 500px;
+  height: 500px;
+  background: #D1E9F6;
+  color: #021526;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin-bottom: 20px;
-  backdrop-filter: blur(10px); /* Blur effect for glassy look */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for better contrast */
+  backdrop-filter: blur(10px);
+  border: 1px solid #173B45; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.creator-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 15px;
 }
 
 .creator-card h2 {
@@ -48,7 +62,7 @@ h1, h2 {
 }
 
 .creator-card a {
-  color: #1e90ff; /* Light blue link color */
+  color: #1e90ff; 
   text-decoration: none;
 }
 
@@ -67,67 +81,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #131842;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* index.css */
-.edit-creator {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.edit-creator h1 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.edit-creator form {
-  display: flex;
-  flex-direction: column;
-}
-
-.edit-creator label {
-  margin-bottom: 15px;
-}
-
-.edit-creator input,
-.edit-creator textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.edit-creator textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.edit-creator button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.edit-creator button:hover {
-  background-color: #0056b3;
-}
-.error {
-  color: red;
-  margin-top: 10px;
-}
 
