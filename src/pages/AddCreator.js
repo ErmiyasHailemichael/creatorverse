@@ -26,6 +26,7 @@ const AddCreator = () => {
 
   return (
     <div className="form-container">
+    <button type="button" className="back-button" onClick={() => navigate(-1)}>Back</button>
       <h1>Add New Creator</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
