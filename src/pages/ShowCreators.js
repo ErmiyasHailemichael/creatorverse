@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { faEdit, faTrash, faLink, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,8 +12,6 @@ const ShowCreators = () => {
     const { data, error } = await supabase
       .from('creators')
       .select('*');
-  
-    console.log('Fetched data:', data); 
   
     if (error) {
       console.error('Error fetching data:', error);
@@ -47,31 +44,33 @@ const ShowCreators = () => {
         <a href="/" className="button">View All Creators</a>
         <a href="/new" className="button">Add a Creator</a>
       </div>
-      {creators.length > 0 ? (
-        creators.map(creator => (
-          <div key={creator.id} className="creator-card">
-            <h2>{creator.name}</h2>
-            <img src={creator.imageURL} alt={creator.name} />
-            <p>{creator.description}</p>
-            <div className="buttons-container">
-              <a href={creator.url} target="_blank" rel="noopener noreferrer">
-                <button><FontAwesomeIcon icon={faLink} /> Visit Channel</button>
-              </a>
-              <button onClick={() => navigate(`/creator/${creator.id}`)}>
-                <FontAwesomeIcon icon={faInfoCircle} /> Details
-              </button>
-              <button onClick={() => handleDelete(creator.id)}>
-                <FontAwesomeIcon icon={faTrash} /> Delete
-              </button>
-              <a href={`/edit/${creator.id}`}>
-                <button><FontAwesomeIcon icon={faEdit} /> Edit</button>
-              </a>
+      <div className="creator-grid">
+        {creators.length > 0 ? (
+          creators.map(creator => (
+            <div key={creator.id} className="creator-card">
+              <h2>{creator.name}</h2>
+              <img src={creator.imageURL} alt={creator.name} />
+              <p>{creator.description}</p>
+              <div className="buttons-container">
+                <a href={creator.url} target="_blank" rel="noopener noreferrer">
+                  <button><FontAwesomeIcon icon={faLink} /> Visit Channel</button>
+                </a>
+                <button onClick={() => navigate(`/creator/${creator.id}`)}>
+                  <FontAwesomeIcon icon={faInfoCircle} /> Details
+                </button>
+                <button onClick={() => handleDelete(creator.id)}>
+                  <FontAwesomeIcon icon={faTrash} /> Delete
+                </button>
+                <a href={`/edit/${creator.id}`}>
+                  <button><FontAwesomeIcon icon={faEdit} /> Edit</button>
+                </a>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <p>No content creators found.</p>
-      )}
+          ))
+        ) : (
+          <p>No content creators found.</p>
+        )}
+      </div>
     </div>
   );
 };

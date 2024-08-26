@@ -11,9 +11,9 @@
 .view-creator img {
     width: 500px;
     height: 500px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    margin-bottom: 20px; /* Adds some space below the image */
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .view-creator h2 {
@@ -26,9 +26,9 @@
     font-size: 1.2rem;
 }
 
-/* Styling for buttons */
+
 .view-creator a, .view-creator button {
-    background-color: #007bff; /* Change this color to your preferred button color */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -46,11 +46,11 @@
     background-color: #0056b3;
 }
 
-/* Specific styling for the Visit Channel button */
+
 .visit-channel-link {
-    background-color: #4CAF50; /* Button color */
+    background-color: #4CAF50; 
 }
 
 .visit-channel-link:hover {
-    background-color: #45a049; /* Hover effect */
+    background-color: #45a049; 
 }
