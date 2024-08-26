@@ -41,8 +41,9 @@ const ShowCreators = () => {
   return (
     <div>
       <div className="header-buttons">
-        <a href="/" className="button">View All Creators</a>
-        <a href="/new" className="button">Add a Creator</a>
+        <button><a href="/" className="button">View All Creators</a></button>
+        <button> <a href="/new" className="button">Add a Creator</a></button>
+       
       </div>
       <div className="creator-grid">
         {creators.length > 0 ? (

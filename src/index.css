@@ -16,13 +16,13 @@ body {
 .header-buttons a {
   margin-right: 10px;
   text-decoration: none;
-  color: #007bff;
+  color: #dde0e2;
   font-weight: bold;
 }
 
-.header-buttons a:hover {
+/* .header-buttons a:hover {
   text-decoration: underline;
-}
+} */
 
 h1, h2 {
   color: #021526;
@@ -61,10 +61,10 @@ h1, h2 {
   margin: 10px 0;
 }
 
-.creator-card a {
-  color: #1e90ff; 
+/* .creator-card a {
+  color: #5f6a75; 
   text-decoration: none;
-}
+} */
 
 .creator-card a:hover {
   text-decoration: underline;
