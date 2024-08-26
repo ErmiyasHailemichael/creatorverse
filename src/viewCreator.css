@@ -1,3 +1,13 @@
+.view-creator {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
 .view-creator img {
     width: 500px;
     height: 500px;
@@ -33,5 +43,14 @@
 }
 
 .view-creator a:hover, .view-creator button:hover {
-    background-color: #007bff;
+    background-color: #0056b3;
+}
+
+/* Specific styling for the Visit Channel button */
+.visit-channel-link {
+    background-color: #4CAF50; /* Button color */
+}
+
+.visit-channel-link:hover {
+    background-color: #45a049; /* Hover effect */
 }
