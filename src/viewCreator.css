@@ -1,0 +1,37 @@
+.view-creator img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    margin-bottom: 20px; /* Adds some space below the image */
+}
+
+.view-creator h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.view-creator p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* Styling for buttons */
+.view-creator a, .view-creator button {
+    background-color: #007bff; /* Change this color to your preferred button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-creator a:hover, .view-creator button:hover {
+    background-color: #007bff;
+}

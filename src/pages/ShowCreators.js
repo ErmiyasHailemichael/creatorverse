@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { supabase } from '../client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { faEdit, faTrash, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash, faLink, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const ShowCreators = () => {
   const [creators, setCreators] = useState([]);
+  const navigate = useNavigate();
 
   const fetchCreators = async () => {
     const { data, error } = await supabase
@@ -51,28 +53,16 @@ const ShowCreators = () => {
             <h2>{creator.name}</h2>
             <img src={creator.imageURL} alt={creator.name} />
             <p>{creator.description}</p>
-            <div className="social-links">
-              {creator.instagram && (
-                <a href={creator.instagram} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faInstagram} size="2x" />
-                </a>
-              )}
-              {creator.youtube && (
-                <a href={creator.youtube} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faYoutube} size="2x" />
-                </a>
-              )}
-              {creator.tiktok && (
-                <a href={creator.tiktok} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faTiktok} size="2x" />
-                </a>
-              )}
-            </div>
             <div className="buttons-container">
               <a href={creator.url} target="_blank" rel="noopener noreferrer">
                 <button><FontAwesomeIcon icon={faLink} /> Visit Channel</button>
               </a>
-              <button onClick={() => handleDelete(creator.id)}><FontAwesomeIcon icon={faTrash} /> Delete</button>
+              <button onClick={() => navigate(`/creator/${creator.id}`)}>
+                <FontAwesomeIcon icon={faInfoCircle} /> Details
+              </button>
+              <button onClick={() => handleDelete(creator.id)}>
+                <FontAwesomeIcon icon={faTrash} /> Delete
+              </button>
               <a href={`/edit/${creator.id}`}>
                 <button><FontAwesomeIcon icon={faEdit} /> Edit</button>
               </a>
@@ -87,13 +77,3 @@ const ShowCreators = () => {
 };
 
 export default ShowCreators;
-
-
-
-
-
-
-
-
-
-
